@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import TaskItem from "./components/TaskItem";
 
-function App() {
+function App() { //Central component to manage state and render other components.
   const [tasks, setTasks] = useState([]);
   const [formState, setFormState] = useState({
     task: "", // string
@@ -71,7 +71,8 @@ function App() {
       </div>
       <hr />
       {tasks.map((item) => (
-        <TaskItem key={item.id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
+        <TaskItem key={item.id} item={item} onDelete={handleDelete} onToggle={handleToggle} />//handleDelete & handleToggle
+        //passed as an argument
       ))}
     </>
   );

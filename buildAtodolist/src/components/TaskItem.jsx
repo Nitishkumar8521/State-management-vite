@@ -1,13 +1,12 @@
 function TaskItem({item,onDelete,onToggle}) {
     // const {task,completed,taskAssignedTo} = props.item;
     function handleDelete(){
-      onDelete(item.id);
+      onDelete(item.id);//handleDelete() function of App.jsx file will be called
     }
 
     function handleToggle(){
-        onToggle(item);
+        onToggle(item);//handleToggle() function of App.jsx file will be called
     }
-    // console.log(item,onDelete,onToggle);
     return (
         <div id="TaskItem" style={{textDecoration:item.completed?'line-through' :"none"}}>{item.task}
         
