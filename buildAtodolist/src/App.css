@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+form{
+  background-color: rgb(238, 158, 158);
+  border-radius: 10px;
+}
+
+#TaskItem{
+  background-color: rgb(197, 164, 228);
+  border-radius: 10px;
+  font-weight: bolder;
+}
+
+#TaskItem>button:nth-child(1){
+  color: rgb(240, 17, 29);
+  margin: 10px;
+}
+input::placeholder{
+  font-weight: bolder;
+  color: blue;
+}
