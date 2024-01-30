@@ -7,6 +7,7 @@ function TaskItem({item,onDelete,onToggle}) {
     function handleToggle(){
         onToggle(item);//handleToggle() function of App.jsx file will be called
     }
+    console.log(item,"Ni");
     return (
         <div id="TaskItem" style={{textDecoration:item.completed?'line-through' :"none"}}>{item.task}
         

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import TaskItem from "./components/TaskItem";
 
@@ -39,7 +39,9 @@ function App() { //Central component to manage state and render other components
   }
   
   function handleDelete(taskId){
+    // console.log(tasks);
      const updatedTask=tasks.filter((task)=>task.id!==taskId)
+    //  console.log(updatedTask);
      setTasks(updatedTask);//whenever state variable changes re-render happens
   }
 
@@ -48,6 +50,9 @@ function App() { //Central component to manage state and render other components
      const toggleTasks=[...tasks];
      setTasks(toggleTasks);//whenever state variable changes re-render happens
   }
+  useEffect(function (){
+   
+  },[tasks])
   return (
     <>
     <h2 style={{backgroundColor:"aqua",borderRadius:"10px"}}>Todo App using useState</h2>
@@ -71,8 +76,9 @@ function App() { //Central component to manage state and render other components
       </div>
       <hr />
       {tasks.map((item) => (
-        <TaskItem key={item.id} item={item} onDelete={handleDelete} onToggle={handleToggle} />//handleDelete & handleToggle
-        //passed as an argument
+        <TaskItem key={item.id} item={item} onDelete={handleDelete} onToggle={handleToggle} /> //1.The Item, handleDelete,
+        //and handleToggle functions will be passed down to TaskItem.jsx as props for respective actions on tasks.
+        //2.Assign a unique key prop to each item in a list for efficient rendering.
       ))}
     </>
   );
